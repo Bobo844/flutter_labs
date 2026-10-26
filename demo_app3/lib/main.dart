@@ -16,31 +16,33 @@ class MonApplication extends StatelessWidget {
           backgroundColor: Colors.lightBlue,
           title: const Text('Les widgets de base'),
         ),
-        body:SingleChildScrollView(
-        child: Padding(
-          padding:EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        body:Center(
+            child: Stack(
+              alignment: Alignment.center,
               children: [
-                CircleAvatar(
-                  radius: 34,
-                  backgroundImage:NetworkImage("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fr.clipproject.info%2Fimages%2Fjoomgallery%2Foriginals%2Fbureau_10%2Fingenieur_cliparts_gratuis__bureau_images_20160412_1456662735.png&f=1&nofb=1&ipt=bd117c9bfb6c53298671d2730805eea9c2896c6249c8fce5a21f5e1d42a00628&ipo=images"),
-                ),
-                Text(
-                  "Oumar Camara",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 24,
+                Image.network(
+                  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.xhog4f1-t_AYmLB0RPZGMQHaEK%3Fpid%3DApi&f=1&ipt=b227dcc40b45b9a8ffb89c92bdb8e3ab1790037b0f749fab3246b39864e83bc5&ipo=images",
+                  height:MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  
                   ),
-                ),
-                Icon(Icons.send,color: Colors.black)
+                  Container(
+                    margin: EdgeInsets.all(24),
+                    color: Colors.green.withOpacity(0.5),
+                    height: MediaQuery.of(context).size.height,
+                    width: 500,
+                  ),
+                  Text(
+                    "Salut les flemares",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 34,
+                    ),
+                    
+                    )
               ],
-          ),
-        ),
-
-          )
+            ),
+        )
           
         )
     );
