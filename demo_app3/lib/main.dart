@@ -16,31 +16,51 @@ class MonApplication extends StatelessWidget {
           backgroundColor: Colors.lightBlue,
           title: const Text('Les widgets de base'),
         ),
-        body:SingleChildScrollView(
-        child: Padding(
-          padding:EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 34,
-                  backgroundImage:NetworkImage("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fr.clipproject.info%2Fimages%2Fjoomgallery%2Foriginals%2Fbureau_10%2Fingenieur_cliparts_gratuis__bureau_images_20160412_1456662735.png&f=1&nofb=1&ipt=bd117c9bfb6c53298671d2730805eea9c2896c6249c8fce5a21f5e1d42a00628&ipo=images"),
-                ),
-                Text(
-                  "Oumar Camara",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 24,
+        body:Column(
+          children: [
+            Text("Salut les codeurs"),
+            Divider(
+              height: 120,
+              thickness: 7,
+              indent: 24,
+              endIndent: 34,
+              color: Colors.amber,
+            ),
+            Container(
+              margin: EdgeInsets.all(20),
+              color: Colors.cyan,
+              height: 200,
+            ),
+            Icon(
+              Icons.add_a_photo,
+              size: 55,
+              color: Colors.blue,
+              ),
+              SizedBox(height: 25,),
+              Row(
+                children: [
+                  SizedBox(width: 24,),
+                  Icon(
+                    Icons.home,
+                    size: 34,
+                    color: Colors.lightGreenAccent,
                   ),
-                ),
-                Icon(Icons.send,color: Colors.black)
-              ],
-          ),
-        ),
+                  SizedBox(
+                    height: 32,
+                    child: VerticalDivider(
+                    thickness: 6,
+                    color: Colors.red,
+                  ),
+                  ),
+                  Spacer(flex: 2,),
+                  Text("salut les petits con"),
+                  Spacer(),
+                  Icon(Icons.send),
+                ],
+              )
 
-          )
+          ],
+        )
           
         )
     );
