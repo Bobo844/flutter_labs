@@ -12,35 +12,67 @@ class MonApplication extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
-          title: const Text('Les widgets de base'),
-        ),
-        body:SingleChildScrollView(
-        child: Padding(
-          padding:EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        //ce composant permet d'adapter nos interfaces au different appareille ou elle s'afficherons
+        body: SafeArea(
+          bottom: false,
+          //top: false,
+          child: Column(
+          children: [
+            Container(
+              height:64,
+              margin: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.lightGreenAccent
+              ),
+            ),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                  colors:[
+                      Colors.deepOrangeAccent,
+                      Colors.greenAccent
+                      
+                    ],
+                    begin: Alignment.bottomCenter
+                  )
+                ),
+              ),
+            ),
+           Container(
+            child:  Wrap(
               children: [
-                CircleAvatar(
-                  radius: 34,
-                  backgroundImage:NetworkImage("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fr.clipproject.info%2Fimages%2Fjoomgallery%2Foriginals%2Fbureau_10%2Fingenieur_cliparts_gratuis__bureau_images_20160412_1456662735.png&f=1&nofb=1&ipt=bd117c9bfb6c53298671d2730805eea9c2896c6249c8fce5a21f5e1d42a00628&ipo=images"),
+                Container(
+                  color: Colors.red,
+                  height: 54,
+                  width: 28,
                 ),
-                Text(
-                  "Oumar Camara",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 24,
-                  ),
+                 Container(
+                  color: Colors.white,
+                  height: 54,
+                  width: 28,
                 ),
-                Icon(Icons.send,color: Colors.black)
+                 Container(
+                  color: Colors.black,
+                  height: 54,
+                  width: 28,
+                ),
+                 Container(
+                  color: Colors.cyanAccent,
+                  height: 54,
+                  width: 28,
+                ),
+                 Container(
+                  color: Colors.blue,
+                  height: 54,
+                  width: 28,
+                ),
               ],
-          ),
-        ),
-
-          )
+            ),
+           )
+          ]
+        ))
           
         )
     );
