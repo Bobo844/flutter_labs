@@ -12,36 +12,46 @@ class MonApplication extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
-          title: const Text('Les widgets de base'),
-        ),
-        body:SingleChildScrollView(
-        child: Padding(
-          padding:EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        backgroundColor: Colors.blue,
+        body: Center(
+          child:Card(
+            clipBehavior: Clip.antiAlias,
+            child: Column(
               children: [
-                CircleAvatar(
-                  radius: 34,
-                  backgroundImage:NetworkImage("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fr.clipproject.info%2Fimages%2Fjoomgallery%2Foriginals%2Fbureau_10%2Fingenieur_cliparts_gratuis__bureau_images_20160412_1456662735.png&f=1&nofb=1&ipt=bd117c9bfb6c53298671d2730805eea9c2896c6249c8fce5a21f5e1d42a00628&ipo=images"),
-                ),
                 Text(
-                  "Oumar Camara",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 24,
+                  "Mon identité",
+                  style: Theme.of(context).textTheme.titleLarge,
                   ),
-                ),
-                Icon(Icons.send,color: Colors.black)
+                  Divider(
+                    color: Colors.blueAccent,
+                    indent: 8,
+                    endIndent: 8,
+                    thickness: 2,
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 24,
+                        backgroundImage: NetworkImage("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIF.i%252blRD0btuRHLLYFpS%252bkmgw%26pid%3DApi&f=1&ipt=1c58d377364c86c9e33a9eab743aa86bfb38f020bc1e61130a4fc0848c8ac9a2&ipo=images"),
+                  
+                      ),
+                      Spacer(),
+                      Text(
+                        "Medy Smith",
+                        style: TextStyle(
+                          color: Colors.blueAccent,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold
+                        ),
+                        ),
+                        SizedBox(height: 14,),
+                        Image.network("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.HF0wF-5o1KqDBIL_A_t1UgHaHa%3Fr%3D0%26pid%3DApi&f=1&ipt=7d3275ea429aa045b2bea0cd081d5048fc8833ce4a7ed70bc791a51130c1a0bb&ipo=images")
+                    ],
+                  )
               ],
+            ),
           ),
-        ),
-
           )
-          
         )
     );
   }
